@@ -58,12 +58,13 @@ namespace Graphic
 
             ICalculator calculator = GetCalculator();
             var time = new List<(double, int)>();
-            if (n < 10000) throw new ArgumentException("N меньше допустимо значения для нормальной отрисовки графика");
+           
             double result = 0.0;
-            for (var i = 10000; i < n; i += 10000)
+            result = calculator.Calculate(a, b, n, x => 35 * x - Math.Log(10 * x) + 2);
+            for (var i = 0; i < n; i +=10000)
             {
                 var timeStart = DateTime.Now;
-                result = calculator.Calculate(a, b, i, x => 35 * x - Math.Log(10 * x) + 2);
+                calculator.Calculate(a, b, i, x => 35 * x - Math.Log(10 * x) + 2);
                 var timeStop = DateTime.Now;
                 time.Add(((timeStop - timeStart).TotalMilliseconds, i));
             }

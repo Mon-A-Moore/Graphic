@@ -60,37 +60,18 @@ namespace UnitTests
         }
 
         [TestMethod]
-        public void Error_if_n_below_10000_()
+        public void Error_if_a_and_b_below_zero()
         {
             double expected = 174591.027;
-            int a = 1;
-            int b = 100;
-            int n = 0;
+            int a = -1;
+            int b = -100;
+            int n = 100;
             Func<double, double> f = x => 35 * x - Math.Log(10 * x) + 2;
 
             RectangleCalculator RectangleCalculator = new RectangleCalculator();
             TrapCalculator TrapCalculator = new TrapCalculator();
             SimpsonCalculator SimpsonCalculator = new SimpsonCalculator();
             
-
-            //act
-            double actual1 = RectangleCalculator.Calculate(a, b, n, f);
-            double actual2 = TrapCalculator.Calculate(a, b, n, f);
-            double actual3 = SimpsonCalculator.Calculate(a, b, n, f);
-        }
-        [TestMethod]
-        public void Error_if_a_and_b_below_zero()
-        {
-            double expected = 174591.027;
-            int a = -1;
-            int b = -100;
-            int n = 100000;
-            Func<double, double> f = x => 35 * x - Math.Log(10 * x) + 2;
-
-            RectangleCalculator RectangleCalculator = new RectangleCalculator();
-            TrapCalculator TrapCalculator = new TrapCalculator();
-            SimpsonCalculator SimpsonCalculator = new SimpsonCalculator();
-
 
             //act
             double actual1 = RectangleCalculator.Calculate(a, b, n, f);

@@ -33,7 +33,7 @@
         <TextBlock Grid.Row="1" Grid.Column="0">UppIndex</TextBlock>
         <TextBox x:Name="tbUpperBound" Grid.Row="1" Grid.Column="1" Margin="5">100</TextBox>
         <TextBlock  Grid.Row="2" Grid.Column="0" Margin="5">N, count</TextBlock>
-        <TextBox x:Name="tbN"  Grid.Row="2" Grid.Column="1" Margin="5">1000</TextBox>
+        <TextBox x:Name="tbN"  Grid.Row="2" Grid.Column="1" Margin="5" Text="10001"/>
 
 
         <Button x:Name="btCalculate" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,5,246" Click="btCalculate_Click">Рассчитать</Button>

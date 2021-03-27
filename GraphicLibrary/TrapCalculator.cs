@@ -11,7 +11,7 @@ namespace GraphicLibrary
         public double Calculate(double a, double b, long n, Func<double, double> f)
         {
             if ((a < 0) | (b < 0)) throw new ArgumentException("a или b меньше допустимо значения");
-            if (n < 10000) throw new ArgumentException("N меньше допустимо значения для нормальной отрисовки графика");
+            
             double h = (b - a) / n;
 
             double sum = 0;
