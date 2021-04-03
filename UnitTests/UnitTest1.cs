@@ -60,6 +60,7 @@ namespace UnitTests
         }
 
         [TestMethod]
+        [ExpectedException(typeof (ArgumentException))]
         public void Error_if_a_and_b_below_zero()
         {
             double expected = 174591.027;
