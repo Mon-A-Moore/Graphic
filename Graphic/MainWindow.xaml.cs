@@ -55,7 +55,18 @@ namespace Graphic
             double a = Convert.ToDouble(tbLowerBound.Text);
             double b = Convert.ToDouble(tbUpperBound.Text);
             long n = Convert.ToInt64(tbN.Text);
+            //try
+            //{
+            //    long n = Convert.ToInt64(tbN.Text);
+            //}
+            //catch(Exception e)
+            //{
 
+            //}
+            //finally
+            //{
+
+            //}
             ICalculator calculator = GetCalculator();
             var time = new List<(double, int)>();
            

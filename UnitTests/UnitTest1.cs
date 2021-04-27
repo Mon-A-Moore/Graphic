@@ -73,7 +73,6 @@ namespace UnitTests
             TrapCalculator TrapCalculator = new TrapCalculator();
             SimpsonCalculator SimpsonCalculator = new SimpsonCalculator();
             
-
             //act
             double actual1 = RectangleCalculator.Calculate(a, b, n, f);
             double actual2 = TrapCalculator.Calculate(a, b, n, f);
