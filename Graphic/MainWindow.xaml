@@ -36,8 +36,8 @@
         <TextBox x:Name="tbN"  Grid.Row="2" Grid.Column="1" Margin="5" Text="10001"/>
 
 
-        <Button x:Name="btCalculate" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,5,246" Click="btCalculate_Click">Рассчитать</Button>
-        <Button x:Name="btClear" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,33,5,211" Click="btClear_Click">Очистить</Button>
+        <Button x:Name="btCalculate" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,39,5,207" Click="btCalculate_Click">Рассчитать</Button>
+        <Button x:Name="btClear" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,73,5,171" Click="btClear_Click">Очистить</Button>
         <TextBox x:Name ="tbResult" Grid.Row="0" 
                  Grid.Column="2" IsReadOnly="True" TextWrapping="Wrap" Background="LightSkyBlue">
         </TextBox>
@@ -51,6 +51,15 @@
             <ComboBoxItem>
                 Метод Симпсона
             </ComboBoxItem>
+            <ComboBoxItem>
+                Метод прямоугольников параллельный
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Метод трапеций параллельный
+            </ComboBoxItem>
+            <ComboBoxItem>
+                Метод Симпсона параллельный
+            </ComboBoxItem>
         </ComboBox>
 
         <oxy:Plot x:Name="graph" Title="{Binding Title}" Grid.Row="2" Grid.Column="2" Grid.RowSpan="3" Margin="0,5,0,0">
@@ -58,5 +67,6 @@
                 <oxy:LineSeries ItemsSource="{Binding Points}"/>
             </oxy:Plot.Series>
         </oxy:Plot>
+        <TextBox x:Name ="tbTime" Grid.Row="3" IsReadOnly="True" TextWrapping="Wrap" Background="LightSkyBlue" Grid.ColumnSpan="2" Margin="0,10,5,265" Grid.RowSpan="2"/>
     </Grid>
 </Window>

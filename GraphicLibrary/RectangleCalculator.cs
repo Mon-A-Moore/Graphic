@@ -8,7 +8,6 @@ namespace GraphicLibrary
 { 
     public class RectangleCalculator : ICalculator 
     {
-        private readonly object sumLock = new object();
 
         public double Calculate(double a, double b, long n, Func<double, double> f)
         {
@@ -19,19 +18,10 @@ namespace GraphicLibrary
 
             double sum = 0;
 
-            //for (int i = 0; i < n; i++)
-            //{
-            //    sum += f(a + h * i);
-            //}
-
-            Parallel.For(0, n, (i) =>
+            for (int i = 0; i < n; i++)
             {
-                double buf = f(a + h * i);
-                lock (sumLock)
-                {
-                    sum += buf;
-                }
-            });
+                sum += f(a + h * i);
+            }
 
             return sum * h;
 

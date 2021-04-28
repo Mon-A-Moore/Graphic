@@ -25,8 +25,13 @@ namespace Graphic
         }
         private void btCalculate_Click(object sender, RoutedEventArgs e)
         {
+            DateTime StartTime;
+            StartTime = DateTime.Now;
             var time = Calculate();
+            DateTime EndTime = DateTime.Now;
+            tbTime.Text = Convert.ToString(EndTime - StartTime);
             DrawGraph(time);
+
         }
 
          private void DrawGraph(ICollection<(double Time, int PointCount)> times)
@@ -55,18 +60,7 @@ namespace Graphic
             double a = Convert.ToDouble(tbLowerBound.Text);
             double b = Convert.ToDouble(tbUpperBound.Text);
             long n = Convert.ToInt64(tbN.Text);
-            //try
-            //{
-            //    long n = Convert.ToInt64(tbN.Text);
-            //}
-            //catch(Exception e)
-            //{
 
-            //}
-            //finally
-            //{
-
-            //}
             ICalculator calculator = GetCalculator();
             var time = new List<(double, int)>();
            
@@ -89,13 +83,22 @@ namespace Graphic
             switch (cbmMethod.SelectedIndex)
             {
                 case 0:
-                    return new RectangleCalculator();
+                    return new RectangleCalculator1();
                     break;
                 case 1:
-                    return new TrapCalculator();
+                    return new TrapCalculator1();
                     break;
                 case 2:
-                    return new SimpsonCalculator(); 
+                    return new SimpsonCalculator1(); 
+                    break;
+                case 3:
+                    return new RectangleCalculator();
+                    break;
+                case 4:
+                    return new TrapCalculator();
+                    break;
+                case 5:
+                    return new SimpsonCalculator();
                     break;
                 default:
                     return new RectangleCalculator();
