@@ -41,6 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TrapCalculator1.cs" />
+    <Compile Include="SimpsonCalculator1.cs" />
+    <Compile Include="RectangleCalculator1.cs" />
     <Compile Include="SimpsonCalculator.cs" />
     <Compile Include="ICalculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
