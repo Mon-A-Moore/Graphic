@@ -8,17 +8,23 @@ namespace GraphicLibrary
 {
     public class TrapCalculator : ICalculator
     {
+        private readonly object sumLock = new object();
+
         public double Calculate(double a, double b, long n, Func<double, double> f)
         {
             if ((a < 0) | (b < 0)) throw new ArgumentException("a или b меньше допустимо значения");
             
             double h = (b - a) / n;
-
             double sum = 0;
-            for (int i = 1; i < n; i++)
+
+            Parallel.For(0, n, (i) =>
             {
-                sum += f(a + h * i);
-            }
+                double buf = f(a + h * i);
+                lock (sumLock)
+                {
+                    sum += buf;
+                }
+            });
 
             sum += (f(a) + f(b)) / 2;
 
