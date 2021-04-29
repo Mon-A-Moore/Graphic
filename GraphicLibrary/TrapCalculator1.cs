@@ -17,7 +17,7 @@ namespace GraphicLibrary
             double h = (b - a) / n;
             double sum = 0;
 
-            Parallel.For(0, n, (i) =>
+            Parallel.For(1, n, (i) =>
             {
                 double buf = f(a + h * i);
                 lock (sumLock)
